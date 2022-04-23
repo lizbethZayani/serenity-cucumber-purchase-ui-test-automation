@@ -5,11 +5,10 @@ Serenity BDD is a library that makes it easier to write high quality automated a
 Serenity strongly encourages good test automation design, and supports several design patterns, including classic Page Objects, the newer Lean Page Objects/ Action Classes approach, and the more sophisticated and flexible Screenplay pattern.
 
 ## The purchase project
-The best place to start with the project is to clone or download the purchase project on Github . This project interact with the demo online shop: https://www.demoblaze.com/index.html. This is an online shop than offers products like phone, laptops and monitors where the customer could add and delete products from the cart and make the purchase. To interact with the site is not necessary a logged user.
-The framework is developing with Maven and Gradle then you have to have installed Java and Maven in your local machine to run it.
-Serenity with cucumber is implemented to write and describe the scenarios.
+The best place to start with the project is to clone or download the purchase project on Github. This project interact with the demo online shop: https://www.demoblaze.com/index.html. This is an online shop than offers products like phone, laptops and monitors where the customer could add and delete products from the cart and make the purchase. To interact with the site is not necessary a logged user.
+The framework is developing with Maven then you have to have installed Java and Maven in your local machine to run it.
+Serenity with Cucumber is implemented to write and describe the scenarios.
 ### The project directory structure
-The project has build scripts for both Maven and Gradle, and follows the next directory structure:
 ```Gherkin
 src
   + main
@@ -28,10 +27,8 @@ src
              
 ```
 
-Serenity 2.2.13 introduced integration with WebdriverManager to download webdriver binaries.
-
 ## The scenarios
-The scenarios are described in Gherkin. In the firts scenario the customer navigate through the three categories Phone, Laptops and Monitor to explore the shop. The second is to make the purchase of a laptop, where the customer interacts with the whole site until the purchase is completed, so we cover an e2e test.
+The scenarios are described in Gherkin. In the first scenario the customer navigate through the three categories Phone, Laptops and Monitor to explore the shop. The second is to make the purchase of a laptop, where the customer interacts with the whole site until the purchase is completed, so we cover an e2e test.
 
 ```Gherkin
 Feature: Purchase
@@ -142,22 +139,17 @@ public class Product {
 The main advantage of the approach used in this example is not in the lines of code written, although Serenity does reduce a lot of the boilerplate code that you would normally need to write in a web test. The real advantage is in the use of many small, stable classes, each of which focuses on a single job. This application of the _Single Responsibility Principle_ goes a long way to making the test code more stable, easier to understand, and easier to maintain.
 
 ## Executing the tests
-To run the sample project, you can either just run the `CucumberTestSuite` test runner class, or run either `mvn verify` or `gradle test` from the command line.
+To run the sample project, you can either just run the `CucumberTestSuite` test runner class, or run either `mvn verify` from the command line.
 
 By default, the tests will run using Chrome.
 ```json
 $ mvn clean verify
-```
-Or
-```json
-$ gradle clean test 
 ```
 When the test are done, run the next command to get the full report:
 ```json
 $ mvn serenity:aggregate
 ```
 To open the full report run the command:
-
 ```json
 open target/site/serenity/index.html
 ```
