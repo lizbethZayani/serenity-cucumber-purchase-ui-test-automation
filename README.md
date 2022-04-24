@@ -149,10 +149,15 @@ When the test are done, run the next command to get the full report:
 ```json
 $ mvn serenity:aggregate
 ```
-To open the full report run the command:
+To open the full report on Mac OS run the command:
 ```json
 open target/site/serenity/index.html
 ```
+To open it on Windows OS run the command:
+```json
+start target/site/serenity/index.html
+```
+
 
 The test results will be recorded in the `target/site/serenity` directory.
 
