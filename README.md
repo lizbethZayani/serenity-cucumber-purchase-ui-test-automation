@@ -117,7 +117,7 @@ The `@Steps`annotation tells Serenity to create a new instance of the class, and
 
 Each action class models a particular facet of the customer behaviour: navigating to a particular category, add the product to the cart, searching the product in the car, deleting a product, making the purchase. These action classes are designed to be small and self-contained, which makes them more stable and easier to maintain.
 
-The `NavigationThroughProduct` class is an example of a very simple interaction class. In these interaction classes we interact with the page objets of the web page, and to enable this, we make the class extend the Serenity `UIInteractionSteps`.This is a pattern that allows to interact with an object the times we need:
+The `NavigationThroughProduct` class is an example of a very simple interaction class. This class interact with the page objets of the home page, and to enable this, we make the class extend the Serenity `UIInteractionSteps`.This is a pattern that allows to interact with an object the times we need:
 ```java
 public class NavigationThroughProduct extends UIInteractionSteps {
 
