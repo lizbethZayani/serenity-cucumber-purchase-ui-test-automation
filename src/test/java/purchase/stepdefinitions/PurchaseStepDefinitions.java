@@ -51,13 +51,13 @@ public class PurchaseStepDefinitions {
     }
 
     @Then("the customer should see information about the {string}")
-    public void heShouldSeeInformationAboutTheProduct(String product) {
+    public void heShouldSeeInformationAboutTheProduct(String product) throws InterruptedException {
         String getProduct = shouldSeeThe.product(product).trim();
         Assert.assertEquals("The product is not fit with the category selected! Take a look!", product, getProduct);
     }
 
     @When("the customer adds the {string} to the cart")
-    public void addTheToTheCar(String laptop) {
+    public void addTheToTheCar(String laptop) throws InterruptedException {
         navigationThroughProduct.category("Laptops");
         addTheProductToTheCar.addTheProduct(laptop);
     }
@@ -75,7 +75,7 @@ public class PurchaseStepDefinitions {
     }
 
     @When("the customer deletes the {string} from the cart")
-    public void deleteThe(String product) {
+    public void deleteThe(String product) throws InterruptedException {
         theCarContains.cartMenu();
         deleteTheProduct.product(product);
     }
@@ -124,7 +124,7 @@ public class PurchaseStepDefinitions {
     }
 
     @When("the customer clicks on the ok button to finish the purchase")
-    public void theUserClickOnTheOkButtonToDoneThePurchase() {
+    public void theUserClickOnTheOkButtonToDoneThePurchase() throws InterruptedException {
         placeOrder.buttonOkPurchase();
     }
 

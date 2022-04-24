@@ -9,8 +9,9 @@ import static purchase.pageobject.Product.ADDTOCARBTN;
 public class AddTheProductToTheCar extends UIInteractionSteps {
 
     @Step("click on the Add to car btn {0}")
-    public  void addTheProduct(String laptop) {
-        find(nameProduct(laptop)).click();
+    public  void addTheProduct(String laptop) throws InterruptedException {
+        Thread.sleep(700);
+        find(nameProduct(laptop)).waitUntilEnabled().click();
         find(ADDTOCARBTN).click();
     }
     @Step("accept the alert")

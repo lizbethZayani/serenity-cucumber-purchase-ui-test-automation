@@ -8,7 +8,8 @@ import static purchase.pageobject.Product.nameProduct;
 public class ShouldSeeThe extends UIInteractionSteps {
 
     @Step("The customer should see the name about the product {0}")
-    public String product(String product) {
+    public String product(String product) throws InterruptedException {
+        Thread.sleep(750);
        return find(nameProduct(product)).waitUntilEnabled().getText();
     }
 }

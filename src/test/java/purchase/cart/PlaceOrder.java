@@ -64,7 +64,8 @@ public class PlaceOrder extends UIInteractionSteps {
     }
 
     @Step("Click on Ok button into the success modal")
-    public void buttonOkPurchase() {
+    public void buttonOkPurchase() throws InterruptedException {
+        Thread.sleep(700);
         find(OKBUTTON).waitUntilVisible().click();
     }
 

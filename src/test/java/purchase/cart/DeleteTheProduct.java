@@ -12,7 +12,8 @@ public class DeleteTheProduct extends UIInteractionSteps {
      * @param product
      */
     @Step("Click on the deleted btn {0}")
-    public void product(String product) {
+    public void product(String product) throws InterruptedException {
+        Thread.sleep(650);
         find(theDeletedProduct(product)).waitUntilVisible().click();
     }
 }
